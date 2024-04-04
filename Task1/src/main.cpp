@@ -3,22 +3,22 @@
 using namespace std;
 int main(){
     int size,option;
-    cout<<"enter the size of array : ";
+    cout<<"Enter the size of array : ";
     cin>>size;
     array arr(size);
     while(true){
-        cout<<"enter the option you want or '0' to exit : "<<endl;
+        cout<<"Enter the option you want or '0' to exit : "<<endl;
 
-        cout<<"1.insert elements"<<endl;
-        cout<<"2.display elements"<<endl;
-        cout<<"3.sum of array elements"<<endl;
-        cout<<"4.minValue"<<endl;
-        cout<<"5.maxValue"<<endl;
-        cout<<"6.avg"<<endl;
-        cout<<"7.search element"<<endl;
-        cout<<"8.sort the array"<<endl;
-        cout<<"9.print even numbers"<<endl;
-        cout<<"10.print odd numbers"<<endl;
+        cout<<"1.Insert elements"<<endl;
+        cout<<"2.Display elements"<<endl;
+        cout<<"3.Sum of array elements"<<endl;
+        cout<<"4.MinValue"<<endl;
+        cout<<"5.MaxValue"<<endl;
+        cout<<"6.Avg"<<endl;
+        cout<<"7.Search element"<<endl;
+        cout<<"8.Sort the array"<<endl;
+        cout<<"9.Print Odd numbers"<<endl;
+        cout<<"10.Print Even numbers"<<endl;
         cout<<endl;
 
         cin>>option;
@@ -28,12 +28,12 @@ int main(){
                 return 1;
             case 1:
                 int value;
-                cout<<"enter the value : ";
+                cout<<"Enter the value : ";
                 cin>>value;
                 arr.insert(value);
                 break;
             case 2:
-            cout<<"the elements in the array are : "<<endl;
+            cout<<"The elements in the array are : "<<endl;
                 arr.display();
                 cout<<endl;
                 break;
@@ -42,10 +42,10 @@ int main(){
                 break;
                 
             case 4:
-                cout<<"the min value in the array is: "<<arr.MinValue()<<endl;
+                cout<<"The min value in the array is: "<<arr.MinValue()<<endl;
                 break;
             case 5:
-            cout<<"the max value in the array is : "<<arr.MaxValue()<<endl;
+            cout<<"The max value in the array is : "<<arr.MaxValue()<<endl;
                 break;
             case 6:
 
@@ -53,7 +53,7 @@ int main(){
                 break;
             case 7:
                 int element;
-                cout<<"enter the element to search : ";
+                cout<<"Enter the element to search : ";
                 cin>>element;
                 arr.search(element);
                 break;
@@ -62,16 +62,16 @@ int main(){
                 break;
 
             case 9:
-                cout<<"the odd numbers in the array are : "<<endl;
+                cout<<"The odd numbers in the array are : "<<endl;
                 arr.OddNumbers();
                 break;
             case 10:
-                cout<<"the even numbers in the array are : "<<endl;
+                cout<<"The even numbers in the array are : "<<endl;
                 arr.EvenNumbers();
                 break;
                 
             default:
-                cout<<"please choose the correct option!! and try again "<<endl;
+                cout<<"Choose Valid Option! and try again! "<<endl;
         }
     }
     return 0;
