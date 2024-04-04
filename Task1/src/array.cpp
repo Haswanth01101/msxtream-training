@@ -53,11 +53,13 @@ void array::search(int value)
 {
 	for(int i=0;i<count;i++)
 	{
-	  if(value=arr[i])
+	  if(value==arr[i])
 	  {
 	 cout<<"The value found at index : "<<i<<endl;
+	 break;
 	  }
 	}
+	cout<<"The value not found in the array"<<endl;
 }
 void array::sort()
 {
@@ -76,8 +78,9 @@ swap(arr[i],arr[minindex]);
 
 cout<<"The sorted Order of Numbers: ";
 for(int i=0;i<count;i++){
-	cout<<arr[i]<<"\t";
+	cout<<arr[i]<<"  ";
 }
+cout<<endl;
 }
 void array::EvenNumbers()
 {
