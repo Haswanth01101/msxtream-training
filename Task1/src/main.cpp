@@ -5,6 +5,10 @@ int main(){
     int size,option;
     cout<<"Enter the size of array : ";
     cin>>size;
+    if(size<=0){
+        cout<<"Invalid size!!!"<<endl;
+        return 1;
+    }
     array arr(size);
     while(true){
         cout<<"Enter the option you want or '0' to exit : "<<endl;
