@@ -30,7 +30,6 @@ void HttpJson::onPostProcessRequest(MSFRequest* msfRequest, MSFResponse* msfResp
         msfResponse->addToData(responseKey, responseData[responseKey]);
             }
     } else {
-        // If the content value is not valid, set appropriate error info
         cerr << "Invalid content value: " << contentValue << endl;
         string infoid = configObj["Response_onPostProcessRequest"]["infoid"];
         string infomsg = configObj["Response_onPostProcessRequest"]["infomsg"];
@@ -44,3 +43,21 @@ void HttpJson::onPostProcessRequest(MSFRequest* msfRequest, MSFResponse* msfResp
     sendResponse(msfResponse, connection);
     connection->release();
 }
+void HttpJson::onInvalidJSONRequest(HTTPServerRequest* request, HTTPConnection* connection, const string& rawRequest)
+{
+	cerr << "Request Received: " << rawRequest << endl;
+	string infoid,infomsg;
+	infoid = configObj["Response_onInvaidJson"]["infoid"];
+	infomsg = configObj["Response_onInvalidJson"]["infomsg"];
+	MSFRequest* msfreq = new MSFRequest(rawRequest);
+	MSFResponse* err = new MSFResponse(msfreq);
+	string errmsg = "Invalid JSON request: " + rawRequest;
+	err->addToData("error", errmsg);
+	err->setInfoID(infoid);
+	err->setInfoMsg(infomsg);
+        err->setSvcName(configObj["Response_onInvalidJson"]["svcName"]);
+	err->setSvcGroup(configObj["Response_onInvalidJson"]["svcGroup"]);
+	err->setSvcVersion(configObj["Response_onInvalidJson"]["svcVersion"]);
+	sendResponse(err, connection);
+	connection->release();
+	}
