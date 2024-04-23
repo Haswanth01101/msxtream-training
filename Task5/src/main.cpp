@@ -3,8 +3,8 @@
 using namespace std;
 int main(int argc,char *argv[]) {
 	if (argc < 2) {
-	 	cerr << "Usage: " << argv[0] << " <json_path> <config_path>" << endl;
-		return 1;
+	 cerr << "Usage: " << argv[0] << " <json_path> <config_path>" << endl;
+	return 1;
 	}
 	string jsonpath=argv[1];
 	string configpath = argv[2];
