@@ -1,25 +1,28 @@
 
 {
+	"src":"config/app_info.json",
 	"httpServer": {
-	  "port": 8080,
-	  "endUrl": "/content",
+	  "port": 12345,
+	  "endUrl": "/Config/Base/1.0.0",
 	  "load": 1
 	},
 	"Response_onInvalidJson": {
 	  "infoid": "ER101",
 	  "infomsg": "Invalid JSON format",
-	  "svcName": "HttpWebServer",
-	  "svcGroup": "Languageservice"
+	  "svcVersion":"1.0.0",
+	  "svcName": "Base",
+	  "svcGroup": "Config"
 	},
 	"Response_onPostProcessRequest": {
 	  "infoid": "ER102",
-	  "infomsg": "Content NOT FOUND",
-	  "key": "content",
+	  "infomsg": "Data Not Found",
+	  "key": "data",
 	  "value1": "all",
 	  "value2": "app",
 	  "value3": "info",
-	  "svcName": "HttpWebServer",
-	  "svcGroup": "AppService"
+	  "SvcVersion":"1.0.0",
+	  "svcName": "Base",
+	  "svcGroup": "Config"
 	}
 }
 
