@@ -6,11 +6,11 @@ int main(int argc,char *argv[]) {
 	 cerr << "Usage: " << argv[0] << " <json_path> <config_path>" << endl;
 	return 1;
 	}
-	string jsonpath=argv[1];
-	string configpath = argv[2];
-	HttpJson* server = new HttpJson(jsonpath, configpath);
+	string configpath = argv[1];
     JsonApp config(configpath);
     JsonObject obj = config.getObject();
+	string jsonpath=obj["src"];
+	HttpJson* server = new HttpJson(jsonpath, configpath);
     map<string, SBU2WebService*>* jWebService = new map<string, SBU2WebService*>;
     string end_url = obj["httpServer"]["endUrl"]; 
     int load = 1; 
